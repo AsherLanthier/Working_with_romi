@@ -173,5 +173,8 @@ public class Drivetrain extends SubsystemBase {
   @Override
   public void periodic() {
     // This method will be called once per scheduler run
+    currentPose = odometry.update(getGyroAngle(),
+        m_leftEncoder.getDistance(),
+        m_rightEncoder.getDistance());
   }
 }
